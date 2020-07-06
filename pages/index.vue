@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Logo />
     <div id="login_page" class="login-page">
       <div class="form">
         <form @submit.prevent="checkform" class="register-form">
@@ -20,12 +19,8 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 
 export default {
-  components: {
-    Logo
-  },
   data: () => ({
     email: '',
     password: null,
@@ -42,6 +37,9 @@ export default {
           password: this.password
         })
         if (result.data.authsuccess) {
+          this.$store.commit('auth/setuser', {
+            email: this.email
+          })
           this.$router.push('/note')
           this.erroremail = false
           this.faillogin = false

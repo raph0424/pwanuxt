@@ -1,9 +1,19 @@
 <template>
   <div>
+    <Logo />
     <nuxt />
   </div>
 </template>
 
+<script>
+import Logo from '~/components/Logo.vue'
+
+export default {
+  components: {
+    Logo
+  }
+}
+</script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
