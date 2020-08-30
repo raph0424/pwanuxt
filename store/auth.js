@@ -4,6 +4,9 @@ export const state = () => ({
 export const getters = {
   getIsUserLogged (state) {
     return state.user != null
+  },
+  getEmail (state) {
+    return state.user.email
   }
 }
 export const mutations = {
